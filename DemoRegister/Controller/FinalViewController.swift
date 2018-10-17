@@ -1,14 +1,14 @@
 //
-//  GenderButton.swift
+//  FinalViewController.swift
 //  DemoRegister
 //
-//  Created by admin on 10/3/18.
+//  Created by admin on 10/9/18.
 //  Copyright © 2018 admin. All rights reserved.
 //
 
 import UIKit
 
-class GenderButton: UIViewController {
+class FinalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
