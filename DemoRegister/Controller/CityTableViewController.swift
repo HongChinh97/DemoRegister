@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterTableViewController: UITableViewController {
+class CityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class MasterTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detailTableViewController = segue.destination as? DetailTableViewController {
+        if let detailTableViewController = segue.destination as? DistrictTableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 detailTableViewController.newcityCode = DataServive.shared.dataCities[indexPath.row].cityCode                
             }

@@ -11,16 +11,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Master Table View Controller-->
+        <!--City Table View Controller-->
         <scene sceneID="jLj-OL-muG">
             <objects>
-                <tableViewController id="LFE-j3-0dW" customClass="MasterTableViewController" customModule="DemoRegister" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CityTableViewController" id="LFE-j3-0dW" customClass="CityTableViewController" customModule="DemoRegister" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tbe-LK-oD0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMaster" id="uIV-3a-1lH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Master" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellMaster" id="uIV-3a-1lH">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uIV-3a-1lH" id="QV6-gN-u1T">
@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="2025" y="-618"/>
         </scene>
-        <!--Detail Table View Controller-->
+        <!--District Table View Controller-->
         <scene sceneID="UXx-NZ-nR4">
             <objects>
-                <tableViewController id="Mhy-Y6-Gti" customClass="DetailTableViewController" customModule="DemoRegister" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Mhy-Y6-Gti" customClass="DistrictTableViewController" customModule="DemoRegister" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EwQ-Hc-SrK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="sdE-Ej-6du" kind="show" id="VW8-vL-LfV"/>
+                                    <segue destination="sdE-Ej-6du" kind="show" id="pDY-AI-hw6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -152,8 +152,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xK8-h9-MhH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vPt-yb-z1a"/>
                     <connections>
                         <outlet property="pickerView" destination="fiL-0J-xIQ" id="GIR-4N-X9C"/>
+                        <outlet property="registration" destination="x3k-PF-d0y" id="Cgu-gf-Ee9"/>
                         <outletCollection property="genderButtons" destination="TQ9-6l-JU0" collectionClass="NSMutableArray" id="9yg-5k-nIo"/>
                         <outletCollection property="genderButtons" destination="vrz-3a-Ryo" collectionClass="NSMutableArray" id="8eA-Te-80s"/>
                         <outletCollection property="genderButtons" destination="D0P-HF-hmh" collectionClass="NSMutableArray" id="6BV-KH-W03"/>
@@ -161,12 +163,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mX-EG-7X5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4058" y="-618"/>
+            <point key="canvasLocation" x="3946" y="-618"/>
         </scene>
         <!--Final View Controller-->
         <scene sceneID="7xG-KA-OEd">
             <objects>
-                <viewController id="xgs-g3-wlf" customClass="FinalViewController" customModule="DemoRegister" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinalViewController" id="xgs-g3-wlf" customClass="FinalViewController" customModule="DemoRegister" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="19V-B6-Ss3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,8 +254,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rlc-UX-PTp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="r45-UR-OQY"/>
+                    <navigationItem key="navigationItem" id="r45-UR-OQY">
+                        <barButtonItem key="rightBarButtonItem" springLoaded="YES" systemItem="cancel" id="f8b-Z7-XFG">
+                            <connections>
+                                <action selector="cancelBarBtn:" destination="xgs-g3-wlf" id="hoP-iz-V8s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="cancelBarBtn" destination="f8b-Z7-XFG" id="LRi-sF-yuS"/>
                         <outlet property="label1" destination="qYP-Cb-Bie" id="gNX-5g-q2A"/>
                         <outlet property="labelAge" destination="1c6-eV-bNL" id="SyB-rp-Mza"/>
                         <outlet property="labelDistrict" destination="hrr-Vi-ba6" id="vXV-Qb-RXN"/>
@@ -262,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sd2-Bv-iDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5031" y="-618"/>
+            <point key="canvasLocation" x="4854" y="-618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CuX-gF-a7l">

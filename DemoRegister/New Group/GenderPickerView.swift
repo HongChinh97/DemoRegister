@@ -8,5 +8,5 @@
 
 import Foundation
 class GenderPickerView {
-    <#code#>
+    let gender = 
 }

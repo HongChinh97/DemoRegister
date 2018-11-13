@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //neu du lieu duoc luu thi chay luon vao man cuoi, khong thi chay luon vao man dau tien
+        if UserDefaults.standard.object(forKey: Key.genderKey) != nil {
+            //In project directory storyboard looks like Main.storyboard,
+            //    you should use only part before ".storyboard" as it's name,
+            //     so in this example name is "Main".
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // controller identifier sets up in storyboard utilities
+            //  panel (on the right), it called Storyboard ID
+            if let finalViewController = storyboard.instantiateViewController(withIdentifier: "FinalViewController") as? FinalViewController {
+                finalViewController.isShowRightBarBtn = true
+                let navigation = UINavigationController(rootViewController: finalViewController)
+                // Sets our window up in front
+                window?.rootViewController = navigation
+            }
+        }
         return true
     }
 
@@ -41,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
+
+
 

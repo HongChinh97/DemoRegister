@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailTableViewController: UITableViewController {
+class DistrictTableViewController: UITableViewController {
     var newcityCode: Int?
     var dataDistrict : [District] = []
     override func viewDidLoad() {
